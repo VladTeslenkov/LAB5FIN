@@ -1,7 +1,10 @@
+## IMPORTS
+import pygame ## Библиотека для создания игр
 import sys
 import os
 import subprocess
-## ЕСЛИ НЕ РАБОТАЕТ, ПОМЕНЯЙ ВЕРСИЮ PYQT
+## NEW COMMENT
+## ЕСЛИ НЕ РАБОТАЕТ, ПОМЕНЯЙ ВЕРСИЮ PYQT6
 from PyQt5.QtWidgets import QApplication, QMessageBox, QMainWindow
 from PyQt5.Qt import *
 from PyQt5 import QtWidgets
