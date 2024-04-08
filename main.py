@@ -24,6 +24,7 @@ startDirectory = ""
 textToFind = ""
 
 ## ПЕРВОНАЧАЛЬНАЯ НАСТРОЙКА, ЛУЧШЕ НЕ ТРОГАЙ - УБЬЕТ
+## ПЕРВОНАЧАЛЬНАЯ НАСТРОЙКА, ЛУЧШЕ НЕ ТРОГАЙ - УБЬЕТ
 app = QApplication(sys.argv)
 window = QMainWindow()
 ui = Ui_MainWindow()
@@ -49,6 +50,8 @@ def makePreviewText(s):
     if (len(rows) == 0): 
         messageBox = QMessageBox()
         messageBox.setText("Ничего не найдено.")
+                if (currIndex - prevIndex == 1):        
+                    filePreviews[len(filePreviews) - 1] += row + "\n"
         messageBox.exec()
         return
     
@@ -61,7 +64,6 @@ def makePreviewText(s):
         if not ui.searchInName.isChecked():
             file = row[0 : row.find(':', 3)]
             file = file.replace(startDirectory + "/", "")
-            row = row.replace(row[0 : row.find(':', 3) + 1], "", 1)
 
             if (row.find('-') == -1 or row.find(':') != -1 and row.find(':') < row.find('-')):  
                 currIndex = int(row[0 : row.find(':')])
