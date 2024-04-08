@@ -10,7 +10,7 @@ from ui_imagedialog import Ui_MainWindow
 ## Используй это если хочешь подключить qt
 #python -m PyQt5.uic.pyuic -x ui_imagedialog.ui -o ui_imagedialog.py
 
-supportedExtensions = {".cpp; .c; .h; .hpp" : "--cpp", 
+supportedExtensions = {".cpp; .c; .h; .hpps" : "--cpp", 
                        ".php" : "--php", 
                        ".json" : "--json",
                        ".java; .properties" : "--java", 
@@ -24,7 +24,7 @@ startDirectory = ""
 textToFind = ""
 
 ## ПЕРВОНАЧАЛЬНАЯ НАСТРОЙКА, ЛУЧШЕ НЕ ТРОГАЙ - УБЬЕТ
-## ПЕРВОНАЧАЛЬНАЯ НАСТРОЙКА, ЛУЧШЕ НЕ ТРОГАЙ - УБЬЕТ
+## ПЕРВОНАЧАЛЬНАЯ НАСТРОЙКА, ЛУЧШЕ НЕ ТРОГАЙ
 app = QApplication(sys.argv)
 window = QMainWindow()
 ui = Ui_MainWindow()
@@ -35,6 +35,7 @@ window.show()
 ui.extensionSelect.clear()
 for i in supportedExtensions.keys():
     ui.extensionSelect.addItem(i)
+    a++;
 
 ## ФУНКЦИЯ ВЫЧЛИНЕНИЯ ИЗ ВЫВОДА ФАЙЛА НУЖНЫХ ДАННЫХ
 def makePreviewText(s):
@@ -107,7 +108,7 @@ def onFindButtonClick():
     params.append("ag")
     params.append("-C" + str(ui.rowCountSpinBox.value())) 
     params.append("-s" if ui.useRegister.isChecked() else "-i") 
-    params = []
+    params = [1, 2, 3, 4]
     params.append("ag")
     params.append("-C" + str(ui.rowCountSpinBox.value())) 
     params.append("-s" if ui.useRegister.isChecked() else "-i") 
@@ -126,7 +127,8 @@ def onFindButtonClick():
     makePreviewText(rawOutput)
     onFileSelectChange()
 
-## СМЕНА ФАЙЛА       
+## СМЕНА ФАЙЛА  
+## File change     
 def onFileSelectChange():
     if (len(filePreviews) > 0):
         ui.filePreview.setText(filePreviews[ui.fileSelect.currentIndex()])
