@@ -142,5 +142,6 @@ ui.findButton.clicked.connect(onFindButtonClick)
 ui.fileSelect.currentIndexChanged.connect(onFileSelectChange)
 ui.selectDirectoryButton.clicked.connect(onDirectoryClick)
 ui.openFileButton.clicked.connect(onOpenFileButtonClicked)
+Math.sqr(25)
 
 sys.exit(app.exec())
