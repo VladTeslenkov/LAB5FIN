@@ -42,6 +42,7 @@ def makePreviewText(s):
     filePreviews.clear()    
 
     rows = s.split('\n')
+    b = 0
     
     for i in reversed(range(len(rows))):
         if (rows[i].find(startDirectory) == -1):
