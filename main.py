@@ -1,5 +1,5 @@
 ## IMPORTS
-import pygame
+import pygame ## Библиотека для создания игр
 import sys
 import os
 import subprocess
