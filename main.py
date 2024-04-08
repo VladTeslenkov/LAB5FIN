@@ -7,6 +7,7 @@ from PyQt5.Qt import *
 from PyQt5 import QtWidgets
 from ui_imagedialog import Ui_MainWindow
 
+## Используй это если хочешь подключить qt
 #python -m PyQt5.uic.pyuic -x ui_imagedialog.ui -o ui_imagedialog.py
 
 supportedExtensions = {".cpp; .c; .h; .hpp" : "--cpp", 
@@ -50,7 +51,11 @@ def makePreviewText(s):
         messageBox.setText("Ничего не найдено.")
         messageBox.exec()
         return
-
+    
+    ## Printing numbers
+    for i in range(1, 99):
+        print(i)
+    
     prevIndex = -1
     for row in rows:
         if not ui.searchInName.isChecked():
