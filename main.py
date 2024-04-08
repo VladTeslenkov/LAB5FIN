@@ -105,6 +105,10 @@ def onFindButtonClick():
     params.append("ag")
     params.append("-C" + str(ui.rowCountSpinBox.value())) 
     params.append("-s" if ui.useRegister.isChecked() else "-i") 
+    params = []
+    params.append("ag")
+    params.append("-C" + str(ui.rowCountSpinBox.value())) 
+    params.append("-s" if ui.useRegister.isChecked() else "-i") 
     if (ui.fullFindCheckBox.isChecked()):
         params.append("-w")
     if (ui.searchInName.isChecked()):
@@ -145,4 +149,7 @@ ui.fileSelect.currentIndexChanged.connect(onFileSelectChange)
 ui.selectDirectoryButton.clicked.connect(onDirectoryClick)
 ui.openFileButton.clicked.connect(onOpenFileButtonClicked)
 
+## Programm exiting
 sys.exit(app.exec())
+
+closeProgramm(True)
